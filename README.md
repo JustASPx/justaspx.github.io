@@ -81,7 +81,7 @@ portfolio_zakaria/
 
 1. Cloner le dépôt :
    ```bash
-   git clone https://github.com/JustASPx/portfolio_zakaria.git
+   git clone https://github.com/JustASPx/justaspx.github.io.git
    ```
 2. Ouvrir `index.html` dans un navigateur moderne (Chrome, Firefox, Edge).
 3. Pas de serveur requis, mais pour éviter les restrictions CORS avec certaines APIs, vous pouvez utiliser Live Server dans VS Code.
