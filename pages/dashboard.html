@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Météo — Zakaria Atrkzi</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .weather-app { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; padding-top: 100px; }
+    .weather-header { text-align: center; margin-bottom: 2rem; }
+    .weather-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .weather-header p { color: var(--text-muted); }
+    .search-box { display: flex; gap: 0.5rem; max-width: 500px; margin: 0 auto 1.5rem; }
+    .search-box input { flex: 1; padding: 0.875rem 1rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem; }
+    .search-box input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(5,150,105,0.1); }
+    .search-box button { padding: 0.875rem 1.25rem; border-radius: var(--radius); border: none; background: var(--primary); color: white; cursor: pointer; font-weight: 600; transition: var(--transition); }
+    .search-box button:hover { background: var(--primary-dark); }
+    .recent-searches { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .recent-searches button { padding: 0.4rem 0.9rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); cursor: pointer; font-size: 0.85rem; transition: var(--transition); }
+    .recent-searches button:hover { border-color: var(--primary); color: var(--primary); }
+    .weather-main { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    .weather-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .weather-card h3 { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .current-weather { display: flex; align-items: center; gap: 1.5rem; }
+    .current-weather .temp { font-size: 4rem; font-weight: 800; line-height: 1; }
+    .current-weather .desc { color: var(--text-muted); font-size: 1.1rem; }
+    .current-weather .location { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .weather-icon { font-size: 3.5rem; }
+    .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .detail-item { display: flex; align-items: center; gap: 0.75rem; }
+    .detail-item i { width: 36px; height: 36px; border-radius: 10px; background: var(--primary-light); color: var(--primary); display: grid; place-items: center; font-size: 0.9rem; }
+    .detail-item div { font-size: 0.85rem; color: var(--text-muted); }
+    .detail-item div strong { display: block; color: var(--text); font-size: 1rem; }
+    .forecast-section { margin-bottom: 2rem; }
+    .forecast-section h3 { margin-bottom: 1rem; font-size: 1.25rem; }
+    .forecast-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem; }
+    .forecast-day { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; text-align: center; transition: var(--transition); }
+    .forecast-day:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .forecast-day .day-name { font-weight: 600; margin-bottom: 0.5rem; }
+    .forecast-day .day-icon { font-size: 1.75rem; margin: 0.5rem 0; }
+    .forecast-day .day-temps { font-size: 0.9rem; color: var(--text-muted); }
+    .forecast-day .day-temps strong { color: var(--text); }
+    .chart-container { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+    .chart-container h3 { margin-bottom: 1rem; font-size: 1.25rem; }
+    .chart-container canvas { width: 100%; height: 250px; }
+    .loading { text-align: center; padding: 3rem; color: var(--text-muted); }
+    .loading .loader { margin-bottom: 1rem; }
+    .error-box { background: #fee2e2; color: #991b1b; padding: 1rem 1.5rem; border-radius: var(--radius); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .error-box i { font-size: 1.25rem; }
+    @media (max-width: 768px) {
+      .weather-main { grid-template-columns: 1fr; }
+      .details-grid { grid-template-columns: 1fr; }
+      .forecast-grid { grid-template-columns: repeat(3, 1fr); }
+      .current-weather { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo"><span>ZA</span> Zakaria Atrkzi</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../index.html#apropos">À propos</a></li>
+        <li><a href="../index.html#competences">Compétences</a></li>
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="todo.html">To-Do App</a></li>
+        <li><a href="dashboard.html" class="active">Météo</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-icon" id="themeToggle" aria-label="Changer de thème"><i class="fas fa-moon"></i></button>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="weather-app">
+    <div class="weather-header">
+      <h1><i class="fas fa-cloud-sun" style="color:var(--primary);"></i> Dashboard Météo</h1>
+      <p>Prévisions météo en temps réel grâce à l'API Open-Meteo.</p>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Rechercher une ville (ex: Casablanca, Paris...)" autocomplete="off">
+      <button id="searchBtn"><i class="fas fa-search"></i></button>
+      <button id="locateBtn" title="Ma position"><i class="fas fa-location-arrow"></i></button>
+    </div>
+
+    <div class="recent-searches" id="recentSearches"></div>
+
+    <div id="weatherContent">
+      <div class="loading"><div class="loader"></div><p>Chargement des données météo...</p></div>
+    </div>
+  </main>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

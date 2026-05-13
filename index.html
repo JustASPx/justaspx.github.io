@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Zakaria Atrkzi - Étudiant en DUT Informatique à l'EST Guelmim, développeur web passionné.">
+  <title>Zakaria Atrkzi — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo"><span>ZA</span> Zakaria Atrkzi</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil" class="active">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="pages/todo.html">To-Do App</a></li>
+        <li><a href="pages/dashboard.html">Météo</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-icon" id="themeToggle" aria-label="Changer de thème"><i class="fas fa-moon"></i></button>
+        <div class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="accueil">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div>
+        <div class="hero-badge"><i class="fas fa-circle-check"></i> Disponible pour un stage</div>
+        <h1>Bonjour, je suis <span class="accent">Zakaria Atrkzi</span></h1>
+        <p class="subtitle" id="typingText"></p>
+        <div class="hero-btns">
+          <a href="#projets" class="btn btn-primary"><i class="fas fa-rocket"></i> Voir mes projets</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Me contacter</a>
+          <a href="https://github.com/JustASPx" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-avatar">ZA</div>
+      </div>
+    </div>
+    <div class="container hero-stats">
+      <div class="stat-item"><div class="num" data-count="3">3</div><div class="label">Projets réalisés</div></div>
+      <div class="stat-item"><div class="num" data-count="8">8+</div><div class="label">Compétences tech</div></div>
+      <div class="stat-item"><div class="num" data-count="3">3</div><div class="label">Langues parlées</div></div>
+    </div>
+  </section>
+
+
+  <section class="section" id="apropos">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>À propos de moi</h2>
+        <p>Étudiant passionné par le développement web et les nouvelles technologies.</p>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>
+            Je suis étudiant en première année de <strong>DUT Informatique</strong> à l'École Supérieure de Technologie de Guelmim. 
+            Passionné par le développement web, je construis des interfaces modernes avec <strong>HTML, CSS et JavaScript</strong>, 
+            tout en approfondissant mes connaissances en <strong>Python et C</strong>.
+          </p>
+          <p>
+            Je suis actuellement à la recherche d'un <strong>stage</strong> qui me permettra de mettre en pratique mes compétences 
+            dans un environnement professionnel et d'apprendre auprès de développeurs expérimentés. 
+            Curieux et autonome, j'aime résoudre des problèmes et découvrir de nouvelles technologies.
+          </p>
+          <div class="about-info">
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div><strong>Formation</strong><span>DUT Informatique</span></div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-school"></i>
+              <div><strong>École</strong><span>EST Guelmim</span></div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div><strong>Ville</strong><span>Guelmim, Maroc</span></div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-calendar"></i>
+              <div><strong>Année</strong><span>2025 / 2026</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <h3 style="margin-bottom:1rem;font-size:1.3rem;">Compétences humaines</h3>
+          <div class="about-info" style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="info-item"><i class="fas fa-brain"></i><div><strong>Esprit d'analyse</strong><span>Capacité à décomposer un problème complexe</span></div></div>
+            <div class="info-item"><i class="fas fa-users"></i><div><strong>Travail en équipe</strong><span>Collaboration et communication efficace</span></div></div>
+            <div class="info-item"><i class="fas fa-sync-alt"></i><div><strong>Adaptabilité</strong><span>Apprentissage rapide des nouveaux outils</span></div></div>
+            <div class="info-item"><i class="fas fa-clock"></i><div><strong>Gestion du temps</strong><span>Organisation et respect des délais</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="competences" style="background:var(--surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Mes compétences</h2>
+        <p>Des technologies modernes et des bases solides en informatique.</p>
+      </div>
+      <div class="skills-tabs reveal">
+        <button class="tab-btn active" data-tab="tech">Techniques</button>
+        <button class="tab-btn" data-tab="soft">Humaines</button>
+        <button class="tab-btn" data-tab="lang">Langues</button>
+      </div>
+      <div class="skills-grid reveal" id="skillsGrid">
+        
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="projets">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Mes projets</h2>
+        <p>Des applications réelles et utilisables, pas seulement des démos.</p>
+      </div>
+      <div class="projects-grid reveal" id="projectsGrid">
+        
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2><i class="fab fa-github" style="color:var(--primary);"></i> Dépôts GitHub</h2>
+        <p>Mes derniers projets publics récupérés en temps réel via l'API GitHub.</p>
+      </div>
+      <div id="githubRepos" class="projects-grid reveal">
+        <div style="text-align:center;padding:2rem;color:var(--text-muted);"><div class="loader"></div><p style="margin-top:1rem;">Chargement des dépôts...</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Me contacter</h2>
+        <p>Envie de collaborer ou de me proposer un stage ? Écrivez-moi !</p>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <h3>Discutons de votre projet</h3>
+          <p>Je suis ouvert aux opportunités de stage, de collaboration sur des projets web, ou simplement pour échanger sur la tech.</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <i class="fas fa-envelope"></i>
+              <div><strong>Email</strong><span>atrkzizakaria@gmail.com</span></div>
+            </div>
+            <div class="contact-method">
+              <i class="fab fa-linkedin-in"></i>
+              <div><strong>LinkedIn</strong><span>zakariaatrkzi</span></div>
+            </div>
+            <div class="contact-method">
+              <i class="fab fa-github"></i>
+              <div><strong>GitHub</strong><span>JustASPx</span></div>
+            </div>
+            <div class="contact-method">
+              <i class="fas fa-map-marker-alt"></i>
+              <div><strong>Localisation</strong><span>Guelmim, Maroc</span></div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-status" id="formStatus"></div>
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" placeholder="Proposition de stage..." required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Zakaria Atrkzi. Développé avec <i class="fas fa-heart" style="color:var(--primary);"></i>.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/JustASPx" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/zakariaatrkzi" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:atrkzizakaria@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Titre du projet</h3>
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>
