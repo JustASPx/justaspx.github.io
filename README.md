@@ -2,6 +2,11 @@
 
 > Projet final du cours **JavaScript Avancé** — DUT Informatique, EST Guelmim (2025/2026)
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://gotciphrd.github.io/portfolio_aqejtaoui_mouad/)
+[![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?logo=html5&logoColor=white)](#)
+[![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?logo=css3&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?logo=javascript&logoColor=black)](#)
+
 ## 🎯 Description
 
 Ce dépôt contient mon portfolio web personnel, développé comme projet final pour le cours de JavaScript Avancé. Il s'agit d'un site web complet et réellement utilisable qui présente mon profil, mes compétences techniques et mes projets.
