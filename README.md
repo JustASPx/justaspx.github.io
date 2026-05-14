@@ -57,7 +57,7 @@ Le site est composé de trois pages principales :
 
 ## 🔗 Liens
 
-- **Maquette Figma** : [https://www.figma.com/file/XXXXX/portfolio-zakaria](https://www.figma.com/file/XXXXX/portfolio-zakaria)
+- **Maquette Figma** : [https://www.figma.com/design/2OIf8LdHDvTaqjPAhMN1Ov/Manquette-Figma?node-id=1-513&t=bBup5sXRAKGNzjPl-1](https://www.figma.com/design/2OIf8LdHDvTaqjPAhMN1Ov/Manquette-Figma?node-id=1-513&t=bBup5sXRAKGNzjPl-1)
 - **Version en ligne** : [https://justaspx.github.io](https://justaspx.github.io) 
 
 ## 📁 Architecture du projet
